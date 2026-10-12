@@ -35,5 +35,20 @@
     "upTo": "bis",
     "perMonth": "/Monat",
     "net": "netto"
+  },
+  "stages": {
+    "default": {
+      "wishlist": "Merkliste",
+      "applied": "Beworben",
+      "acknowledged": "Bestätigt",
+      "action": "Antwort nötig",
+      "test": "Testaufgabe",
+      "interview": "Interview",
+      "offer": "Angebot",
+      "rejected": "Absage",
+      "withdrawn": "Nicht mehr relevant"
+    },
+    "unknown": "Gelöschte Phase",
+    "untitled": "Ohne Namen"
   }
 }

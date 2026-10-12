@@ -35,5 +35,20 @@
     "upTo": "up to",
     "perMonth": "/mo",
     "net": "net"
+  },
+  "stages": {
+    "default": {
+      "wishlist": "Wishlist",
+      "applied": "Applied",
+      "acknowledged": "Acknowledged",
+      "action": "Reply needed",
+      "test": "Test task",
+      "interview": "Interview",
+      "offer": "Offer",
+      "rejected": "Rejected",
+      "withdrawn": "Withdrawn"
+    },
+    "unknown": "Deleted stage",
+    "untitled": "Untitled"
   }
 }

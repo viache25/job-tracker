@@ -35,5 +35,20 @@
     "upTo": "до",
     "perMonth": "/мес",
     "net": "нетто"
+  },
+  "stages": {
+    "default": {
+      "wishlist": "Хочу подать",
+      "applied": "Отправлено",
+      "acknowledged": "Получено",
+      "action": "Нужен ответ",
+      "test": "Тестовое",
+      "interview": "Интервью",
+      "offer": "Оффер",
+      "rejected": "Отказ",
+      "withdrawn": "Не актуально"
+    },
+    "unknown": "Удалённый этап",
+    "untitled": "Без названия"
   }
 }
