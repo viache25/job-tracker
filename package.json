@@ -16,6 +16,7 @@
     "check": "npm run typecheck && npm run lint && npm run format:check && npm test -- --ci"
   },
   "dependencies": {
+    "@expo-google-fonts/onest": "^0.4.2",
     "@hookform/resolvers": "^5.9.1",
     "@shopify/flash-list": "^2.0.2",
     "drizzle-orm": "^0.45.4",
