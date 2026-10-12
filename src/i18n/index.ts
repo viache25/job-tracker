@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import { createInstance } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import de from './de.json';
@@ -38,6 +38,8 @@ export function resolveLanguage(
 export function localeFor(language: Language): string {
   return { ru: 'ru-RU', de: 'de-AT', en: 'en-GB' }[language];
 }
+
+const i18n = createInstance();
 
 void i18n.use(initReactI18next).init({
   resources,
