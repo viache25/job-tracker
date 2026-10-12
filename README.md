@@ -1,5 +1,7 @@
 # JobTracker
 
+[![CI](https://github.com/viache25/job-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/viache25/job-tracker/actions/workflows/ci.yml)
+
 Трекер откликов на вакансии для iOS и Android: делишься ссылкой — вакансия сама раскладывается по столбцам, этапы и напоминания ведут до оффера.
 
 - Что строим: [`docs/PRD.md`](docs/PRD.md)
