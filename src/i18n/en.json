@@ -1,0 +1,39 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "done": "Done",
+    "add": "Add",
+    "close": "Close",
+    "retry": "Try again",
+    "search": "Search",
+    "loading": "Loading…",
+    "notSet": "Not set",
+    "more": "More",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "select": "Select",
+    "clear": "Clear",
+    "reset": "Reset"
+  },
+  "tabs": {
+    "applications": "Applications",
+    "table": "Table",
+    "settings": "Settings"
+  },
+  "time": {
+    "today": "today",
+    "daysAgo_one": "{{count}} day ago",
+    "daysAgo_few": "{{count}} days ago",
+    "daysAgo_many": "{{count}} days ago",
+    "daysAgo_other": "{{count}} days ago"
+  },
+  "money": {
+    "from": "from",
+    "upTo": "up to",
+    "perMonth": "/mo",
+    "net": "net"
+  }
+}

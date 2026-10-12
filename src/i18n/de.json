@@ -1,0 +1,39 @@
+{
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "done": "Fertig",
+    "add": "Hinzufügen",
+    "close": "Schließen",
+    "retry": "Erneut versuchen",
+    "search": "Suchen",
+    "loading": "Wird geladen…",
+    "notSet": "Nicht angegeben",
+    "more": "Mehr",
+    "moveUp": "Nach oben",
+    "moveDown": "Nach unten",
+    "select": "Auswählen",
+    "clear": "Leeren",
+    "reset": "Zurücksetzen"
+  },
+  "tabs": {
+    "applications": "Bewerbungen",
+    "table": "Tabelle",
+    "settings": "Einstellungen"
+  },
+  "time": {
+    "today": "heute",
+    "daysAgo_one": "vor {{count}} Tag",
+    "daysAgo_few": "vor {{count}} Tagen",
+    "daysAgo_many": "vor {{count}} Tagen",
+    "daysAgo_other": "vor {{count}} Tagen"
+  },
+  "money": {
+    "from": "ab",
+    "upTo": "bis",
+    "perMonth": "/Monat",
+    "net": "netto"
+  }
+}

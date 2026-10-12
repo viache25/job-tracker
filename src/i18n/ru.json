@@ -1,0 +1,39 @@
+{
+  "common": {
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "edit": "Изменить",
+    "done": "Готово",
+    "add": "Добавить",
+    "close": "Закрыть",
+    "retry": "Повторить",
+    "search": "Поиск",
+    "loading": "Загрузка…",
+    "notSet": "Не указано",
+    "more": "Ещё",
+    "moveUp": "Выше",
+    "moveDown": "Ниже",
+    "select": "Выбрать",
+    "clear": "Очистить",
+    "reset": "Сбросить"
+  },
+  "tabs": {
+    "applications": "Отклики",
+    "table": "Таблица",
+    "settings": "Настройки"
+  },
+  "time": {
+    "today": "сегодня",
+    "daysAgo_one": "{{count}} дн. назад",
+    "daysAgo_few": "{{count}} дн. назад",
+    "daysAgo_many": "{{count}} дн. назад",
+    "daysAgo_other": "{{count}} дн. назад"
+  },
+  "money": {
+    "from": "от",
+    "upTo": "до",
+    "perMonth": "/мес",
+    "net": "нетто"
+  }
+}
