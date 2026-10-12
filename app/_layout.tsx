@@ -36,7 +36,10 @@ export default function RootLayout() {
     if (ready || db.error) void SplashScreen.hideAsync();
   }, [ready, db.error]);
 
-  if (db.error) return <DatabaseError message={db.error.message} />;
+  if (db.error) {
+    const cause = db.error.cause instanceof Error ? `\n\n${db.error.cause.message}` : '';
+    return <DatabaseError message={`${db.error.message}${cause}`} />;
+  }
   if (!ready) return null;
 
   return (

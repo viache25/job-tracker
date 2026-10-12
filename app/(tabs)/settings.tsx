@@ -2,7 +2,10 @@ import Constants from 'expo-constants';
 import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
+import { createDemoApplications } from '@/features/applications/demo';
+import { applicationsRepo } from '@/features/applications/hooks';
 import { useLanguagePreference, useThemePreference } from '@/features/settings/preferences';
+import { useStages } from '@/features/stages/hooks';
 import type { LanguagePreference } from '@/i18n';
 import {
   ListRow,
@@ -19,6 +22,7 @@ export default function SettingsScreen() {
   const { t } = useTranslation();
   const [theme, setTheme] = useThemePreference();
   const [language, setLanguage] = useLanguagePreference();
+  const stages = useStages();
   const version = Constants.expoConfig?.version ?? '—';
 
   return (
@@ -65,6 +69,27 @@ export default function SettingsScreen() {
           <ListRow title="UI showcase" onPress={() => router.push('/dev/ui')} last />
         ) : null}
       </ListSection>
+
+      {__DEV__ ? (
+        <ListSection title="Developer" footer="Dev builds only.">
+          <ListRow
+            title="Add 500 demo applications"
+            onPress={() => createDemoApplications(applicationsRepo, stages, 500)}
+            testID="dev-demo"
+          />
+          <ListRow
+            title="Add 12 demo applications"
+            onPress={() => createDemoApplications(applicationsRepo, stages, 12)}
+            testID="dev-demo-small"
+          />
+          <ListRow
+            title="Delete all applications"
+            destructive
+            onPress={() => applicationsRepo.list().forEach((a) => applicationsRepo.remove(a.id))}
+            last
+          />
+        </ListSection>
+      ) : null}
     </Screen>
   );
 }
