@@ -1,24 +1,34 @@
-import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
-import { useMemo } from 'react';
+import { migrate } from 'drizzle-orm/expo-sqlite/migrator';
+import { useEffect, useState } from 'react';
 
 import migrations from '../../drizzle/migrations';
-import { db } from './client';
+import { openDatabase } from './client';
 import { seedDefaults } from './seed';
+
+async function prepare(): Promise<void> {
+  const db = await openDatabase();
+  await migrate(db, migrations);
+  seedDefaults(db);
+}
+
+let preparing: Promise<void> | undefined;
 
 /** Applies pending migrations and seeds defaults; `ready` flips once the database is usable. */
 export function useDatabaseReady(): { ready: boolean; error?: Error } {
-  const { success, error } = useMigrations(db, migrations);
+  const [state, setState] = useState<{ ready: boolean; error?: Error }>({ ready: false });
 
-  // Seeding is synchronous and idempotent, so it runs right after migrations succeed.
-  const seedError = useMemo(() => {
-    if (!success) return undefined;
-    try {
-      seedDefaults(db);
-      return undefined;
-    } catch (e) {
-      return e instanceof Error ? e : new Error(String(e));
-    }
-  }, [success]);
+  useEffect(() => {
+    let active = true;
+    preparing ??= prepare();
+    preparing.then(
+      () => active && setState({ ready: true }),
+      (e: unknown) =>
+        active && setState({ ready: false, error: e instanceof Error ? e : new Error(String(e)) }),
+    );
+    return () => {
+      active = false;
+    };
+  }, []);
 
-  return { ready: success && !seedError, error: error ?? seedError };
+  return state;
 }

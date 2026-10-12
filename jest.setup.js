@@ -9,3 +9,8 @@ jest.mock('expo-crypto', () => {
       crypto.createHash('sha256').update(data).digest('hex'),
   };
 });
+
+jest.mock(
+  'react-native-safe-area-context',
+  () => require('react-native-safe-area-context/jest/mock').default,
+);

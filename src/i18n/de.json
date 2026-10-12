@@ -50,5 +50,27 @@
     },
     "unknown": "Gelöschte Phase",
     "untitled": "Ohne Namen"
+  },
+  "form": {
+    "newTitle": "Neue Bewerbung",
+    "editTitle": "Bewerbung bearbeiten"
+  },
+  "add": {
+    "title": "Neue Stelle"
+  },
+  "stagesEditor": {
+    "title": "Phasen"
+  },
+  "settings": {
+    "theme": "Design",
+    "themeSystem": "System",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "language": "Sprache",
+    "languageSystem": "Wie im System",
+    "tracker": "Tracker",
+    "about": "Über die App",
+    "version": "Version",
+    "privacyNote": "Alle Daten bleiben auf diesem Gerät. Kein Konto, kein Server, keine Analyse."
   }
 }

@@ -50,5 +50,27 @@
     },
     "unknown": "Deleted stage",
     "untitled": "Untitled"
+  },
+  "form": {
+    "newTitle": "New application",
+    "editTitle": "Edit application"
+  },
+  "add": {
+    "title": "New vacancy"
+  },
+  "stagesEditor": {
+    "title": "Funnel stages"
+  },
+  "settings": {
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "language": "Language",
+    "languageSystem": "Same as system",
+    "tracker": "Tracker",
+    "about": "About",
+    "version": "Version",
+    "privacyNote": "All data stays on this device. No account, no server, no analytics."
   }
 }
