@@ -7,3 +7,4 @@ docs
 src/parser/__fixtures__
 *.md
 package-lock.json
+coverage
