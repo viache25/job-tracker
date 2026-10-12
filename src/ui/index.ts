@@ -19,3 +19,4 @@ export * from './components/Text';
 export * from './components/TextField';
 export * from './theme';
 export * from './tokens';
+export * from './components/ScreenHeader';
