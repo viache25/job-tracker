@@ -16,7 +16,8 @@
     "moveDown": "Move down",
     "select": "Select",
     "clear": "Clear",
-    "reset": "Reset"
+    "reset": "Reset",
+    "back": "Back"
   },
   "tabs": {
     "applications": "Applications",
@@ -53,13 +54,105 @@
   },
   "form": {
     "newTitle": "New application",
-    "editTitle": "Edit application"
+    "editTitle": "Edit application",
+    "errors": {
+      "required": "Required",
+      "url": "Enter an http(s) link",
+      "number": "Enter a number",
+      "date": "Date as DD.MM.YYYY",
+      "email": "Invalid email",
+      "range": "\"To\" is less than \"From\""
+    },
+    "sectionPlace": "Place and format",
+    "datePlaceholder": "DD.MM.YYYY",
+    "dateHint": "For example 15.11.2026",
+    "stackPlaceholder": "React, TypeScript…",
+    "removeTag": "Remove {{tag}}",
+    "create": "Save application",
+    "update": "Save changes"
   },
   "add": {
-    "title": "New vacancy"
+    "title": "New vacancy",
+    "intro": "Paste a link to the vacancy – title, company, salary and more are filled in right on your phone.",
+    "paste": "Paste from clipboard",
+    "parse": "Fill in from link",
+    "pasteText": "Paste the posting text",
+    "manual": "Fill in by hand",
+    "loading": "Reading the page…",
+    "successTitle": "Everything found",
+    "partialTitle": "Some fields are missing",
+    "partialBody": "Add the title or company – we filled in the rest.",
+    "fromTextTitle": "Text parsed",
+    "checkFields": "Check the fields: the label shows where each value came from.",
+    "submit": "Add to table",
+    "startOver": "Another link",
+    "textIntro": "Copy the whole posting text – the first line becomes the title.",
+    "textLabel": "Posting text",
+    "textPlaceholder": "Frontend Developer (m/w/d)…",
+    "parseText": "Parse text",
+    "errors": {
+      "invalid_url": {
+        "title": "That doesn't look like a link",
+        "body": "It needs to start with http:// or https://."
+      },
+      "timeout": {
+        "title": "The page didn't respond",
+        "body": "The site took longer than 8 seconds. Try again or paste the text."
+      },
+      "network": {
+        "title": "Couldn't reach the site",
+        "body": "Check your connection or paste the posting text."
+      },
+      "http_error": {
+        "title": "The site returned an error",
+        "body": "The vacancy may be gone. You can paste the text or fill it in by hand."
+      },
+      "not_html": {
+        "title": "That's not a vacancy page",
+        "body": "The link isn't an HTML page (a PDF, for example). Paste the text or fill it in by hand."
+      },
+      "too_large": {
+        "title": "The page is too large",
+        "body": "We don't load pages over 3 MB. Paste the posting text."
+      },
+      "login_required": {
+        "title": "The site needs a login",
+        "body": "We don't log in for you. Copy the posting text and paste it here."
+      },
+      "nothing_found": {
+        "title": "No vacancy found on the page",
+        "body": "The page is probably built by scripts. Paste the text or fill it in by hand."
+      }
+    }
   },
   "stagesEditor": {
-    "title": "Funnel stages"
+    "title": "Funnel stages",
+    "add": "Add stage",
+    "edit": "Stage",
+    "name": "Name",
+    "color": "Color",
+    "kind": "Type",
+    "kindActive": "Active",
+    "kindClosed": "Closed",
+    "kindHint": "Applications in closed stages go to the archive.",
+    "needsAction": "Needs action",
+    "needsActionHint": "These wait for you: reply, do the task, prepare.",
+    "hidden": "Hide from pickers",
+    "hiddenHint": "The stage isn't offered any more; applications in it stay.",
+    "hiddenShort": "hidden",
+    "delete": "Delete stage",
+    "deleteTitle": "Delete this stage?",
+    "deleteBody": "There are no applications in this stage.",
+    "deleteMoveBody_one": "{{count}} application is in this stage – where should it go?",
+    "deleteMoveBody_few": "{{count}} applications are in this stage – where should they go?",
+    "deleteMoveBody_many": "{{count}} applications are in this stage – where should they go?",
+    "deleteMoveBody_other": "{{count}} applications are in this stage – where should they go?",
+    "moveTo": "Move to",
+    "count_one": "{{count}} application",
+    "count_few": "{{count}} applications",
+    "count_many": "{{count}} applications",
+    "count_other": "{{count}} applications",
+    "footer": "The order here is the funnel order in the list and the table."
   },
   "settings": {
     "theme": "Theme",
@@ -72,5 +165,164 @@
     "about": "About",
     "version": "Version",
     "privacyNote": "All data stays on this device. No account, no server, no analytics."
+  },
+  "filters": {
+    "title": "Filters",
+    "open": "Filters and sorting",
+    "sort": "Sort by",
+    "sortBy": {
+      "updated": "Updated",
+      "created": "Created",
+      "salary": "Salary",
+      "deadline": "Deadline"
+    },
+    "stage": "Stage",
+    "allStages": "All stages",
+    "workMode": "Work mode",
+    "hasSalary": "Salary given",
+    "deadlineSoon": "Deadline within 3 days",
+    "searchPlaceholder": "Company, title, notes",
+    "noResults": "Nothing found",
+    "noResultsBody": "Try another search or reset the filters."
+  },
+  "workMode": {
+    "onsite": "On-site",
+    "hybrid": "Hybrid",
+    "remote": "Remote"
+  },
+  "applications": {
+    "add": "Add vacancy",
+    "archive": "Archive",
+    "emptyTitle": "Nothing here yet",
+    "emptyBody": "Paste a link to a vacancy and the app fills in the fields for you."
+  },
+  "salaryPeriod": {
+    "hour": "/hr",
+    "month": "/mo",
+    "year": "/yr"
+  },
+  "salaryPeriodName": {
+    "hour": "Per hour",
+    "month": "Per month",
+    "year": "Per year"
+  },
+  "employmentType": {
+    "full_time": "Full-time",
+    "part_time": "Part-time",
+    "contract": "Contract",
+    "internship": "Internship",
+    "other": "Other"
+  },
+  "card": {
+    "openVacancy": "Open vacancy",
+    "stage": "Stage",
+    "timeline": "History",
+    "created": "Added",
+    "notes": "Notes",
+    "notesPlaceholder": "Anything worth remembering: who called, questions for the interview…",
+    "saved": "Saved",
+    "contact": "Contact",
+    "writeEmail": "Write an email",
+    "details": "Details",
+    "description": "Description",
+    "showMore": "Show all",
+    "showLess": "Show less",
+    "menu": "Actions",
+    "archive": "Archive",
+    "unarchive": "Restore from archive",
+    "delete": "Delete application",
+    "deleteConfirmTitle": "Delete this application?",
+    "deleteConfirmBody": "The application and its history will be deleted for good.",
+    "notFound": "Application not found",
+    "archived": "Archived"
+  },
+  "field": {
+    "url": "Link",
+    "title": "Job title",
+    "company": "Company",
+    "city": "City",
+    "country": "Country",
+    "workMode": "Work mode",
+    "salary": "Salary",
+    "salaryMin": "From",
+    "salaryMax": "To",
+    "salaryCurrency": "Currency",
+    "salaryPeriod": "Period",
+    "salaryIsNet": "This is net",
+    "salaryMonthlyGross": "Gross/mo",
+    "employmentType": "Employment",
+    "stack": "Stack",
+    "language": "Posting language",
+    "postedAt": "Posted",
+    "deadline": "Deadline",
+    "description": "Description",
+    "stage": "Stage",
+    "notes": "Notes",
+    "contactName": "Contact person",
+    "contactEmail": "Contact email",
+    "source": "Source",
+    "updatedAt": "Updated"
+  },
+  "country": {
+    "AT": "Austria",
+    "DE": "Germany",
+    "CH": "Switzerland",
+    "LI": "Liechtenstein"
+  },
+  "fieldSource": {
+    "markup": "Markup",
+    "meta": "Meta tags",
+    "heuristic": "Guess",
+    "ai": "AI",
+    "user": "Manual"
+  },
+  "duplicate": {
+    "title": "This vacancy is already here",
+    "body": "{{company}} – {{title}}",
+    "open": "Open",
+    "addAnyway": "Add anyway"
+  },
+  "table": {
+    "columns": "Columns",
+    "pinned": "pinned",
+    "showColumn": "Show \"{{column}}\"",
+    "width": "Width of \"{{column}}\"",
+    "widthNarrow": "Narrow",
+    "widthNormal": "Normal",
+    "widthWide": "Wide",
+    "column": {
+      "company": "Company",
+      "title": "Title",
+      "stage": "Stage",
+      "salary": "Gross/mo",
+      "workMode": "Mode",
+      "stack": "Stack",
+      "deadline": "Deadline",
+      "updated": "Updated",
+      "city": "City",
+      "employmentType": "Employment",
+      "created": "Created",
+      "source": "Source"
+    },
+    "sortBy": "Sort by \"{{column}}\"",
+    "sortedAsc": "ascending",
+    "sortedDesc": "descending",
+    "summaryCount_one": "{{count}} application",
+    "summaryCount_few": "{{count}} applications",
+    "summaryCount_many": "{{count}} applications",
+    "summaryCount_other": "{{count}} applications",
+    "summaryMedian": "median {{value}}"
+  },
+  "colors": {
+    "slate": "Slate",
+    "blue": "Blue",
+    "teal": "Teal",
+    "amber": "Amber",
+    "violet": "Violet",
+    "orange": "Orange",
+    "green": "Green",
+    "red": "Red",
+    "pink": "Pink",
+    "gray": "Gray"
   }
 }
