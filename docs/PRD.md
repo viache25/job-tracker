@@ -134,7 +134,7 @@ applications {
   deletedAt?: string    // 0.3, для синхронизации
 }
 
-stages        { id, key, name, color, position, kind: 'active' | 'closed', needsAction: boolean }
+stages        { id, key, name, color, position, kind: 'active' | 'closed', needsAction: boolean, hidden: boolean }  // name '' = встроенное имя из i18n; color — ключ палитры
 stage_events  { id, applicationId, fromStageId?, toStageId, at }
 settings      { key, value }                                   // JSON-значения
 custom_columns{ id, name, type: 'text'|'number'|'date'|'select'|'checkbox', options?, position, visible }  // 0.2
