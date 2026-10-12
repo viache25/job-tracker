@@ -1,5 +1,7 @@
 # JobTracker
 
+[![CI](https://github.com/viache25/job-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/viache25/job-tracker/actions/workflows/ci.yml)
+
 Трекер откликов на вакансии для iOS и Android: делишься ссылкой — вакансия сама раскладывается по столбцам, этапы и напоминания ведут до оффера.
 
 - Что строим: [`docs/PRD.md`](docs/PRD.md)
@@ -32,6 +34,10 @@ npx expo run:ios --device     # через Xcode, бесплатная подп�
 # или, с аккаунтом Apple Developer:
 npx eas build --profile development --platform ios
 ```
+
+## Web-превью
+
+`npx expo start --web` подходит для быстрого взгляда на вёрстку (`/dev/ui`, настройки). Открывайте не корень, а, например, `http://localhost:8081/settings`: заголовки cross-origin isolation, нужные SQLite в браузере, ставятся на эти пути. Web-версия expo-sqlite нестабильна на синхронных запросах, поэтому экраны с данными проверяем на iPhone или в симуляторе. Разбор ссылок в браузере не работает из-за CORS — только на телефоне.
 
 ## Проверки
 

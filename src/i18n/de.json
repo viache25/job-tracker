@@ -1,0 +1,328 @@
+{
+  "common": {
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "done": "Fertig",
+    "add": "Hinzufügen",
+    "close": "Schließen",
+    "retry": "Erneut versuchen",
+    "search": "Suchen",
+    "loading": "Wird geladen…",
+    "notSet": "Nicht angegeben",
+    "more": "Mehr",
+    "moveUp": "Nach oben",
+    "moveDown": "Nach unten",
+    "select": "Auswählen",
+    "clear": "Leeren",
+    "reset": "Zurücksetzen",
+    "back": "Zurück"
+  },
+  "tabs": {
+    "applications": "Bewerbungen",
+    "table": "Tabelle",
+    "settings": "Einstellungen"
+  },
+  "time": {
+    "today": "heute",
+    "daysAgo_one": "vor {{count}} Tag",
+    "daysAgo_few": "vor {{count}} Tagen",
+    "daysAgo_many": "vor {{count}} Tagen",
+    "daysAgo_other": "vor {{count}} Tagen"
+  },
+  "money": {
+    "from": "ab",
+    "upTo": "bis",
+    "perMonth": "/Monat",
+    "net": "netto"
+  },
+  "stages": {
+    "default": {
+      "wishlist": "Merkliste",
+      "applied": "Beworben",
+      "acknowledged": "Bestätigt",
+      "action": "Antwort nötig",
+      "test": "Testaufgabe",
+      "interview": "Interview",
+      "offer": "Angebot",
+      "rejected": "Absage",
+      "withdrawn": "Nicht mehr relevant"
+    },
+    "unknown": "Gelöschte Phase",
+    "untitled": "Ohne Namen"
+  },
+  "form": {
+    "newTitle": "Neue Bewerbung",
+    "editTitle": "Bewerbung bearbeiten",
+    "errors": {
+      "required": "Pflichtfeld",
+      "url": "Bitte einen http(s)-Link eingeben",
+      "number": "Bitte eine Zahl eingeben",
+      "date": "Datum im Format TT.MM.JJJJ",
+      "email": "Ungültige E-Mail",
+      "range": "„Bis“ ist kleiner als „Von“"
+    },
+    "sectionPlace": "Ort und Arbeitsmodell",
+    "datePlaceholder": "TT.MM.JJJJ",
+    "dateHint": "Zum Beispiel 15.11.2026",
+    "stackPlaceholder": "React, TypeScript…",
+    "removeTag": "{{tag}} entfernen",
+    "create": "Bewerbung speichern",
+    "update": "Änderungen speichern"
+  },
+  "add": {
+    "title": "Neue Stelle",
+    "intro": "Füge den Link zur Stelle ein – Position, Firma, Gehalt und mehr werden direkt am Handy ausgefüllt.",
+    "paste": "Aus Zwischenablage einfügen",
+    "parse": "Per Link ausfüllen",
+    "pasteText": "Anzeigentext einfügen",
+    "manual": "Manuell ausfüllen",
+    "loading": "Seite wird gelesen…",
+    "successTitle": "Alles gefunden",
+    "partialTitle": "Nicht alles gefunden",
+    "partialBody": "Ergänze Position oder Firma – den Rest haben wir schon ausgefüllt.",
+    "fromTextTitle": "Text ausgewertet",
+    "checkFields": "Prüfe die Felder: das Label zeigt, woher der Wert stammt.",
+    "submit": "Zur Tabelle hinzufügen",
+    "startOver": "Anderer Link",
+    "textIntro": "Kopiere den ganzen Anzeigentext – die erste Zeile wird zur Position.",
+    "textLabel": "Anzeigentext",
+    "textPlaceholder": "Frontend Developer (m/w/d)…",
+    "parseText": "Text auswerten",
+    "errors": {
+      "invalid_url": {
+        "title": "Das sieht nicht nach einem Link aus",
+        "body": "Es braucht einen Link mit http:// oder https://."
+      },
+      "timeout": {
+        "title": "Die Seite antwortet nicht",
+        "body": "Die Seite hat länger als 8 Sekunden gebraucht. Versuch es nochmal oder füge den Text ein."
+      },
+      "network": {
+        "title": "Keine Verbindung zur Seite",
+        "body": "Prüfe die Internetverbindung oder füge den Anzeigentext ein."
+      },
+      "http_error": {
+        "title": "Die Seite meldet einen Fehler",
+        "body": "Vielleicht ist die Stelle schon offline. Du kannst den Text einfügen oder manuell ausfüllen."
+      },
+      "not_html": {
+        "title": "Das ist keine Stellenseite",
+        "body": "Der Link führt nicht zu einer HTML-Seite (z. B. PDF). Füge den Text ein oder fülle manuell aus."
+      },
+      "too_large": {
+        "title": "Die Seite ist zu groß",
+        "body": "Über 3 MB laden wir nicht. Füge den Anzeigentext ein."
+      },
+      "login_required": {
+        "title": "Anmeldung erforderlich",
+        "body": "Wir melden uns nicht für dich an. Kopiere den Anzeigentext und füge ihn hier ein."
+      },
+      "nothing_found": {
+        "title": "Keine Stelle auf der Seite gefunden",
+        "body": "Die Seite wird wohl per Skript aufgebaut. Füge den Text ein oder fülle manuell aus."
+      }
+    }
+  },
+  "stagesEditor": {
+    "title": "Phasen",
+    "add": "Phase hinzufügen",
+    "edit": "Phase",
+    "name": "Name",
+    "color": "Farbe",
+    "kind": "Art",
+    "kindActive": "Aktiv",
+    "kindClosed": "Abgeschlossen",
+    "kindHint": "Bewerbungen in abgeschlossenen Phasen landen im Archiv.",
+    "needsAction": "Aktion nötig",
+    "needsActionHint": "Diese Bewerbungen warten auf dich: antworten, Testaufgabe, Vorbereitung.",
+    "hidden": "Bei der Auswahl ausblenden",
+    "hiddenHint": "Die Phase wird nicht mehr angeboten, vorhandene Bewerbungen bleiben.",
+    "hiddenShort": "ausgeblendet",
+    "delete": "Phase löschen",
+    "deleteTitle": "Phase löschen?",
+    "deleteBody": "In dieser Phase sind keine Bewerbungen.",
+    "deleteMoveBody_one": "In dieser Phase ist {{count}} Bewerbung – wohin verschieben?",
+    "deleteMoveBody_few": "In dieser Phase sind {{count}} Bewerbungen – wohin verschieben?",
+    "deleteMoveBody_many": "In dieser Phase sind {{count}} Bewerbungen – wohin verschieben?",
+    "deleteMoveBody_other": "In dieser Phase sind {{count}} Bewerbungen – wohin verschieben?",
+    "moveTo": "Verschieben nach",
+    "count_one": "{{count}} Bewerbung",
+    "count_few": "{{count}} Bewerbungen",
+    "count_many": "{{count}} Bewerbungen",
+    "count_other": "{{count}} Bewerbungen",
+    "footer": "Die Reihenfolge ist die Reihenfolge im Trichter in Liste und Tabelle."
+  },
+  "settings": {
+    "theme": "Design",
+    "themeSystem": "System",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "language": "Sprache",
+    "languageSystem": "Wie im System",
+    "tracker": "Tracker",
+    "about": "Über die App",
+    "version": "Version",
+    "privacyNote": "Alle Daten bleiben auf diesem Gerät. Kein Konto, kein Server, keine Analyse."
+  },
+  "filters": {
+    "title": "Filter",
+    "open": "Filter und Sortierung",
+    "sort": "Sortierung",
+    "sortBy": {
+      "updated": "Aktualisiert",
+      "created": "Erstellt",
+      "salary": "Gehalt",
+      "deadline": "Frist"
+    },
+    "stage": "Phase",
+    "allStages": "Alle Phasen",
+    "workMode": "Arbeitsmodell",
+    "hasSalary": "Gehalt angegeben",
+    "deadlineSoon": "Frist in den nächsten 3 Tagen",
+    "searchPlaceholder": "Firma, Position, Notizen",
+    "noResults": "Nichts gefunden",
+    "noResultsBody": "Ändere die Suche oder setze die Filter zurück."
+  },
+  "workMode": {
+    "onsite": "Vor Ort",
+    "hybrid": "Hybrid",
+    "remote": "Remote"
+  },
+  "applications": {
+    "add": "Stelle hinzufügen",
+    "archive": "Archiv",
+    "emptyTitle": "Noch leer",
+    "emptyBody": "Füge einen Link zur Stelle ein – die App füllt die Felder selbst aus."
+  },
+  "salaryPeriod": {
+    "hour": "/Std.",
+    "month": "/Monat",
+    "year": "/Jahr"
+  },
+  "salaryPeriodName": {
+    "hour": "Pro Stunde",
+    "month": "Pro Monat",
+    "year": "Pro Jahr"
+  },
+  "employmentType": {
+    "full_time": "Vollzeit",
+    "part_time": "Teilzeit",
+    "contract": "Freelance / befristet",
+    "internship": "Praktikum",
+    "other": "Sonstiges"
+  },
+  "card": {
+    "openVacancy": "Stelle öffnen",
+    "stage": "Phase",
+    "timeline": "Verlauf",
+    "created": "Hinzugefügt",
+    "notes": "Notizen",
+    "notesPlaceholder": "Was du nicht vergessen willst: wer angerufen hat, Fragen fürs Interview…",
+    "saved": "Gespeichert",
+    "contact": "Kontakt",
+    "writeEmail": "E-Mail schreiben",
+    "details": "Details",
+    "description": "Beschreibung",
+    "showMore": "Alles anzeigen",
+    "showLess": "Weniger anzeigen",
+    "menu": "Aktionen",
+    "archive": "Archivieren",
+    "unarchive": "Aus dem Archiv holen",
+    "delete": "Bewerbung löschen",
+    "deleteConfirmTitle": "Bewerbung löschen?",
+    "deleteConfirmBody": "Die Bewerbung und ihr Verlauf werden endgültig gelöscht.",
+    "notFound": "Bewerbung nicht gefunden",
+    "archived": "Archiviert"
+  },
+  "field": {
+    "url": "Link",
+    "title": "Position",
+    "company": "Firma",
+    "city": "Stadt",
+    "country": "Land",
+    "workMode": "Arbeitsmodell",
+    "salary": "Gehalt",
+    "salaryMin": "Von",
+    "salaryMax": "Bis",
+    "salaryCurrency": "Währung",
+    "salaryPeriod": "Zeitraum",
+    "salaryIsNet": "Netto-Angabe",
+    "salaryMonthlyGross": "Brutto/Monat",
+    "employmentType": "Anstellung",
+    "stack": "Stack",
+    "language": "Sprache der Anzeige",
+    "postedAt": "Veröffentlicht",
+    "deadline": "Frist",
+    "description": "Beschreibung",
+    "stage": "Phase",
+    "notes": "Notizen",
+    "contactName": "Ansprechperson",
+    "contactEmail": "E-Mail der Kontaktperson",
+    "source": "Quelle",
+    "updatedAt": "Aktualisiert"
+  },
+  "country": {
+    "AT": "Österreich",
+    "DE": "Deutschland",
+    "CH": "Schweiz",
+    "LI": "Liechtenstein"
+  },
+  "fieldSource": {
+    "markup": "Markup",
+    "meta": "Meta-Tags",
+    "heuristic": "Vermutung",
+    "ai": "KI",
+    "user": "Manuell"
+  },
+  "duplicate": {
+    "title": "Diese Stelle ist schon da",
+    "body": "{{company}} – {{title}}",
+    "open": "Öffnen",
+    "addAnyway": "Trotzdem hinzufügen"
+  },
+  "table": {
+    "columns": "Spalten",
+    "pinned": "fixiert",
+    "showColumn": "„{{column}}“ anzeigen",
+    "width": "Breite „{{column}}“",
+    "widthNarrow": "Schmal",
+    "widthNormal": "Normal",
+    "widthWide": "Breit",
+    "column": {
+      "company": "Firma",
+      "title": "Position",
+      "stage": "Phase",
+      "salary": "Brutto/Monat",
+      "workMode": "Modell",
+      "stack": "Stack",
+      "deadline": "Frist",
+      "updated": "Aktualisiert",
+      "city": "Stadt",
+      "employmentType": "Anstellung",
+      "created": "Erstellt",
+      "source": "Quelle"
+    },
+    "sortBy": "Nach „{{column}}“ sortieren",
+    "sortedAsc": "aufsteigend",
+    "sortedDesc": "absteigend",
+    "summaryCount_one": "{{count}} Bewerbung",
+    "summaryCount_few": "{{count}} Bewerbungen",
+    "summaryCount_many": "{{count}} Bewerbungen",
+    "summaryCount_other": "{{count}} Bewerbungen",
+    "summaryMedian": "Median {{value}}"
+  },
+  "colors": {
+    "slate": "Schiefer",
+    "blue": "Blau",
+    "teal": "Petrol",
+    "amber": "Bernstein",
+    "violet": "Violett",
+    "orange": "Orange",
+    "green": "Grün",
+    "red": "Rot",
+    "pink": "Rosa",
+    "gray": "Grau"
+  }
+}
