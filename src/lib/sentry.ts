@@ -1,9 +1,12 @@
 import * as Sentry from '@sentry/react-native';
 import type { ComponentType } from 'react';
 
-const dsn = process.env.EXPO_PUBLIC_SENTRY_DSN;
+/** Public project DSN (EU region). An env value overrides it, e.g. for a staging project. */
+const DEFAULT_DSN =
+  'https://39778f2b90d09a2812bff362914bca5d@o4512281628901376.ingest.de.sentry.io/4512281649414224';
+const dsn = process.env.EXPO_PUBLIC_SENTRY_DSN || DEFAULT_DSN;
 
-/** Crash reports only in release builds that have a DSN configured. */
+/** Crash reports only in release builds. */
 export const crashReportsEnabled = !!dsn && !__DEV__;
 
 if (crashReportsEnabled) {
