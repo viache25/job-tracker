@@ -46,9 +46,8 @@ eas submit -p ios                            # отправка в App Store Con
 
 Перед релизом:
 
-1. В `app.json` заменить тестовые App ID AdMob (`androidAppId`, `iosAppId`) на свои.
-2. В `src/features/monetization/config.ts` вписать ID рекламных блоков (баннер, межстраничная, видео за награду). Пока они пустые, везде тестовая реклама Google; в dev-сборках она тестовая всегда.
-3. В EAS → Environment variables задать `EXPO_PUBLIC_REVENUECAT_IOS_KEY`, `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY`, `EXPO_PUBLIC_SENTRY_DSN` (образец — `.env.example`). Для source maps в Sentry — секрет `SENTRY_AUTH_TOKEN` и убрать `SENTRY_DISABLE_AUTO_UPLOAD` из `eas.json`.
+1. App ID AdMob (`app.json`) и ID рекламных блоков (`src/features/monetization/config.ts`) уже боевые. В dev-сборках реклама всегда тестовая; на свою настоящую рекламу не нажимать.
+2. В EAS → Environment variables задать `EXPO_PUBLIC_REVENUECAT_IOS_KEY`, `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY`, `EXPO_PUBLIC_SENTRY_DSN` (образец — `.env.example`). Для source maps в Sentry — секрет `SENTRY_AUTH_TOKEN` и убрать `SENTRY_DISABLE_AUTO_UPLOAD` из `eas.json`.
 
 Как устроены реклама и покупка — [`docs/decisions/0004-monetization-ads.md`](docs/decisions/0004-monetization-ads.md).
 

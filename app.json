@@ -46,8 +46,8 @@
       [
         "react-native-google-mobile-ads",
         {
-          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
-          "iosAppId": "ca-app-pub-3940256099942544~1458002511",
+          "androidAppId": "ca-app-pub-5676291919327888~8811292067",
+          "iosAppId": "ca-app-pub-5676291919327888~9549658661",
           "delayAppMeasurementInit": true,
           "userTrackingUsageDescription": "Your data is used to show you more relevant ads. Job Tracker stays free either way.",
           "skAdNetworkItems": [

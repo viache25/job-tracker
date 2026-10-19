@@ -24,8 +24,8 @@
 
 - `src/features/monetization/policy.ts` — чистая логика (счётчик 2–6, окно 12 часов, когда реклама разрешена) с тестами.
 - `native.ts` — нативные модули грузятся лениво. В Expo Go и вебе их нет, приложение работает без рекламы и покупок.
-- `config.ts` — ID рекламных блоков (тестовые Google, пока не заполнены боевые; в dev-сборках всегда тестовые) и ключи RevenueCat из `EXPO_PUBLIC_REVENUECAT_*`.
-- App ID AdMob — в `app.json` (сейчас тестовые Google, заменить перед релизом).
+- `config.ts` — боевые ID рекламных блоков (в dev-сборках всегда тестовые Google) и ключи RevenueCat из `EXPO_PUBLIC_REVENUECAT_*`.
+- App ID AdMob — в `app.json`.
 
 ## Последствия
 

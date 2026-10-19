@@ -1,12 +1,21 @@
 import { Platform } from 'react-native';
 
 /**
- * Production ad unit IDs from the AdMob dashboard. Until they are filled in (and in every
- * development build) Google's test units are used, so nobody clicks real ads by accident.
+ * Production ad unit IDs from the AdMob dashboard (list_banner, after_save_interstitial,
+ * no_ads_12h_rewarded). Development builds always use Google's test units, so nobody
+ * clicks real ads by accident.
  */
 const PRODUCTION_AD_UNITS: Record<'ios' | 'android', Record<AdPlacement, string | null>> = {
-  android: { banner: null, interstitial: null, rewarded: null },
-  ios: { banner: null, interstitial: null, rewarded: null },
+  android: {
+    banner: 'ca-app-pub-5676291919327888/7498210391',
+    interstitial: 'ca-app-pub-5676291919327888/5175299381',
+    rewarded: 'ca-app-pub-5676291919327888/6330352972',
+  },
+  ios: {
+    banner: 'ca-app-pub-5676291919327888/9071321522',
+    interstitial: 'ca-app-pub-5676291919327888/5913665982',
+    rewarded: 'ca-app-pub-5676291919327888/4139303908',
+  },
 };
 
 export type AdPlacement = 'banner' | 'interstitial' | 'rewarded';
@@ -43,8 +52,8 @@ export function revenueCatKey(): string | null {
 export const PREMIUM_ENTITLEMENT = 'premium';
 
 export const LEGAL_LINKS = {
-  privacy: 'https://trineon.dev/privacy',
-  terms: 'https://trineon.dev/terms',
-  imprint: 'https://trineon.dev/impressum',
+  privacy: 'https://trineon.dev/privacy.html',
+  terms: 'https://trineon.dev/terms.html',
+  imprint: 'https://trineon.dev/impressum.html',
   support: 'mailto:support@trineon.dev',
 } as const;
