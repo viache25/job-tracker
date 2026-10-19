@@ -4,6 +4,11 @@ import { useTranslation } from 'react-i18next';
 
 import { createDemoApplications } from '@/features/applications/demo';
 import { applicationsRepo } from '@/features/applications/hooks';
+import { useDataTransfer } from '@/features/data/useDataTransfer';
+import { openPrivacyOptions } from '@/features/monetization/ads';
+import { RewardListRow } from '@/features/monetization/components/RewardListRow';
+import { usePremium, useReward } from '@/features/monetization/hooks';
+import { useMonetization } from '@/features/monetization/store';
 import { useLanguagePreference, useThemePreference } from '@/features/settings/preferences';
 import { useStages } from '@/features/stages/hooks';
 import type { LanguagePreference } from '@/i18n';
@@ -24,6 +29,10 @@ export default function SettingsScreen() {
   const [language, setLanguage] = useLanguagePreference();
   const stages = useStages();
   const version = Constants.expoConfig?.version ?? '—';
+  const premium = usePremium();
+  const reward = useReward();
+  const privacyOptions = useMonetization((st) => st.privacyOptionsRequired);
+  const data = useDataTransfer();
 
   return (
     <Screen scroll>
@@ -63,7 +72,51 @@ export default function SettingsScreen() {
         <ListRow title={t('stagesEditor.title')} onPress={() => router.push('/stages')} last />
       </ListSection>
 
+      <ListSection title={t('ads.section')}>
+        {premium ? (
+          <ListRow
+            title={t('ads.removeAds')}
+            value={t('ads.premiumActive')}
+            last={!privacyOptions}
+          />
+        ) : (
+          <>
+            <ListRow
+              title={t('ads.removeAds')}
+              onPress={() => router.push('/premium')}
+              last={!reward.visible && !privacyOptions}
+              testID="settings-remove-ads"
+            />
+            {reward.visible ? <RewardListRow reward={reward} last={!privacyOptions} /> : null}
+          </>
+        )}
+        {privacyOptions ? (
+          <ListRow
+            title={t('ads.privacyOptions')}
+            onPress={() => void openPrivacyOptions().catch(() => undefined)}
+            last
+          />
+        ) : null}
+      </ListSection>
+
+      <ListSection title={t('data.section')} footer={t('data.footer')}>
+        <ListRow
+          title={t('data.export')}
+          value={data.busy === 'export' ? t('common.loading') : undefined}
+          onPress={data.busy ? undefined : () => void data.exportCsv()}
+          testID="settings-export"
+        />
+        <ListRow
+          title={t('data.import')}
+          value={data.busy === 'import' ? t('common.loading') : undefined}
+          onPress={data.busy ? undefined : () => void data.importCsv()}
+          last
+          testID="settings-import"
+        />
+      </ListSection>
+
       <ListSection title={t('settings.about')} footer={t('settings.privacyNote')}>
+        <ListRow title={t('about.title')} onPress={() => router.push('/about')} />
         <ListRow title={t('settings.version')} value={version} last={!__DEV__} />
         {__DEV__ ? (
           <ListRow title="UI showcase" onPress={() => router.push('/dev/ui')} last />

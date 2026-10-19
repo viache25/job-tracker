@@ -11,6 +11,7 @@ import { valuesFromParsed, type ApplicationFormValues } from '@/features/applica
 import { applicationsRepo } from '@/features/applications/hooks';
 import type { ApplicationInput } from '@/features/applications/repo';
 import { createFromForm } from '@/features/applications/save';
+import { onApplicationCreated } from '@/features/monetization/ads';
 import { useStages } from '@/features/stages/hooks';
 import { extractUrl, isHttpUrl } from '@/lib/url';
 import { parseText, parseVacancy, type ParseErrorCode } from '@/parser';
@@ -161,8 +162,10 @@ export default function AddScreen() {
                 dirty,
                 allowDuplicate: !!duplicate,
               });
-              if (result.ok) router.replace(`/application/${result.application.id}`);
-              else setState({ step: 'result', draft, duplicate: result.duplicate });
+              if (result.ok) {
+                router.replace(`/application/${result.application.id}`);
+                onApplicationCreated();
+              } else setState({ step: 'result', draft, duplicate: result.duplicate });
             }}
           />
           <Button

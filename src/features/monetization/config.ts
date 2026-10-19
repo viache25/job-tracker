@@ -1,0 +1,50 @@
+import { Platform } from 'react-native';
+
+/**
+ * Production ad unit IDs from the AdMob dashboard. Until they are filled in (and in every
+ * development build) Google's test units are used, so nobody clicks real ads by accident.
+ */
+const PRODUCTION_AD_UNITS: Record<'ios' | 'android', Record<AdPlacement, string | null>> = {
+  android: { banner: null, interstitial: null, rewarded: null },
+  ios: { banner: null, interstitial: null, rewarded: null },
+};
+
+export type AdPlacement = 'banner' | 'interstitial' | 'rewarded';
+
+const TEST_AD_UNITS: Record<'ios' | 'android', Record<AdPlacement, string>> = {
+  android: {
+    banner: 'ca-app-pub-3940256099942544/9214589741',
+    interstitial: 'ca-app-pub-3940256099942544/1033173712',
+    rewarded: 'ca-app-pub-3940256099942544/5224354917',
+  },
+  ios: {
+    banner: 'ca-app-pub-3940256099942544/2435281174',
+    interstitial: 'ca-app-pub-3940256099942544/4411468910',
+    rewarded: 'ca-app-pub-3940256099942544/1712485313',
+  },
+};
+
+export function adUnitId(placement: AdPlacement, { dev = __DEV__ } = {}): string {
+  const os = Platform.OS === 'ios' ? 'ios' : 'android';
+  const production = PRODUCTION_AD_UNITS[os][placement];
+  return !dev && production ? production : TEST_AD_UNITS[os][placement];
+}
+
+/** RevenueCat public SDK keys (safe to ship). Set in EAS env or `.env`. */
+export function revenueCatKey(): string | null {
+  const key =
+    Platform.OS === 'ios'
+      ? process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY
+      : process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY;
+  return key ? key : null;
+}
+
+/** The single RevenueCat entitlement that removes ads. */
+export const PREMIUM_ENTITLEMENT = 'premium';
+
+export const LEGAL_LINKS = {
+  privacy: 'https://trineon.dev/privacy',
+  terms: 'https://trineon.dev/terms',
+  imprint: 'https://trineon.dev/impressum',
+  support: 'mailto:support@trineon.dev',
+} as const;

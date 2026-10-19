@@ -12,6 +12,7 @@ import {
 } from '@/features/applications/formSchema';
 import { applicationsRepo, useApplication } from '@/features/applications/hooks';
 import { createFromForm, updateFromForm } from '@/features/applications/save';
+import { onApplicationCreated } from '@/features/monetization/ads';
 import { useStages } from '@/features/stages/hooks';
 import { Loading, Screen } from '@/ui';
 
@@ -54,8 +55,10 @@ function CreateForm({ initialValues }: { initialValues: ApplicationFormValues })
 
   const save = async (values: ApplicationFormValues, allowDuplicate = false) => {
     const result = await createFromForm(applicationsRepo, values, { allowDuplicate });
-    if (result.ok) router.replace(`/application/${result.application.id}`);
-    else {
+    if (result.ok) {
+      router.replace(`/application/${result.application.id}`);
+      onApplicationCreated();
+    } else {
       setDuplicate(result.duplicate);
       setPending(values);
     }

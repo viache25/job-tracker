@@ -12,6 +12,8 @@ import { SearchBar } from '@/features/applications/components/SearchBar';
 import { countActiveFilters, groupByStage, isFilterActive } from '@/features/applications/filter';
 import { useAllApplications, useApplications } from '@/features/applications/hooks';
 import { useListQuery } from '@/features/applications/useListQuery';
+import { AdBanner } from '@/features/monetization/components/AdBanner';
+import { RewardHint } from '@/features/monetization/components/RewardHint';
 import { useStages } from '@/features/stages/hooks';
 import { stageColor, stageLabel } from '@/features/stages/label';
 import {
@@ -96,71 +98,75 @@ export default function ApplicationsScreen() {
   };
 
   return (
-    <Screen edges={['top']} testID="applications-screen">
-      <ScreenHeader
-        title={t('tabs.applications')}
-        right={
-          <IconButton
-            icon={Plus}
-            accessibilityLabel={t('applications.add')}
-            onPress={add}
-            variant="filled"
-            testID="add-button"
-          />
-        }
-      />
-      {total === 0 ? (
-        <EmptyState
-          icon={Inbox}
-          title={t('applications.emptyTitle')}
-          body={t('applications.emptyBody')}
-          actionLabel={t('applications.add')}
-          onAction={add}
-          testID="applications-empty"
+    <View style={styles.fill}>
+      <Screen edges={['top']} testID="applications-screen">
+        <ScreenHeader
+          title={t('tabs.applications')}
+          right={
+            <IconButton
+              icon={Plus}
+              accessibilityLabel={t('applications.add')}
+              onPress={add}
+              variant="filled"
+              testID="add-button"
+            />
+          }
         />
-      ) : (
-        <>
-          <SearchBar
-            value={query.search}
-            onChange={query.setSearch}
-            onOpenFilters={() => setFiltersOpen(true)}
-            activeFilters={countActiveFilters(query.filter)}
+        {total === 0 ? (
+          <EmptyState
+            icon={Inbox}
+            title={t('applications.emptyTitle')}
+            body={t('applications.emptyBody')}
+            actionLabel={t('applications.add')}
+            onAction={add}
+            testID="applications-empty"
           />
-          {items.length === 0 && isFilterActive(query.filter) ? (
-            <EmptyState
-              icon={SearchX}
-              title={t('filters.noResults')}
-              body={t('filters.noResultsBody')}
-              actionLabel={t('common.reset')}
-              onAction={() => {
-                query.setSearch('');
-                query.resetFilter();
-              }}
+        ) : (
+          <>
+            <RewardHint />
+            <SearchBar
+              value={query.search}
+              onChange={query.setSearch}
+              onOpenFilters={() => setFiltersOpen(true)}
+              activeFilters={countActiveFilters(query.filter)}
             />
-          ) : (
-            <FlashList
-              data={items}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.key}
-              getItemType={(item) => item.type}
-              contentContainerStyle={styles.list}
-              keyboardDismissMode="on-drag"
-              keyboardShouldPersistTaps="handled"
-            />
-          )}
-        </>
-      )}
-      <FilterSheet
-        visible={filtersOpen}
-        onClose={() => setFiltersOpen(false)}
-        filter={query.filter}
-        onChange={query.setFilter}
-        onReset={query.resetFilter}
-        stages={stages}
-        sort={query.sort}
-        onSortChange={query.setSort}
-      />
-    </Screen>
+            {items.length === 0 && isFilterActive(query.filter) ? (
+              <EmptyState
+                icon={SearchX}
+                title={t('filters.noResults')}
+                body={t('filters.noResultsBody')}
+                actionLabel={t('common.reset')}
+                onAction={() => {
+                  query.setSearch('');
+                  query.resetFilter();
+                }}
+              />
+            ) : (
+              <FlashList
+                data={items}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.key}
+                getItemType={(item) => item.type}
+                contentContainerStyle={styles.list}
+                keyboardDismissMode="on-drag"
+                keyboardShouldPersistTaps="handled"
+              />
+            )}
+          </>
+        )}
+        <FilterSheet
+          visible={filtersOpen}
+          onClose={() => setFiltersOpen(false)}
+          filter={query.filter}
+          onChange={query.setFilter}
+          onReset={query.resetFilter}
+          stages={stages}
+          sort={query.sort}
+          onSortChange={query.setSort}
+        />
+      </Screen>
+      <AdBanner />
+    </View>
   );
 }
 
@@ -215,6 +221,7 @@ function ArchiveToggle({
 }
 
 const styles = StyleSheet.create({
+  fill: { flex: 1 },
   list: { paddingTop: space.sm, paddingBottom: space.xxxl },
   rowWrap: { paddingBottom: space.sm },
   header: {

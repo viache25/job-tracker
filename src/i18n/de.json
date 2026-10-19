@@ -17,7 +17,8 @@
     "select": "Auswählen",
     "clear": "Leeren",
     "reset": "Zurücksetzen",
-    "back": "Zurück"
+    "back": "Zurück",
+    "later": "Später"
   },
   "tabs": {
     "applications": "Bewerbungen",
@@ -164,7 +165,7 @@
     "tracker": "Tracker",
     "about": "Über die App",
     "version": "Version",
-    "privacyNote": "Alle Daten bleiben auf diesem Gerät. Kein Konto, kein Server, keine Analyse."
+    "privacyNote": "Deine Bewerbungen bleiben auf diesem Gerät, kein Konto nötig. Werbung und Absturzberichte nutzen nur technische Daten, wie in der Datenschutzerklärung beschrieben."
   },
   "filters": {
     "title": "Filter",
@@ -324,5 +325,63 @@
     "red": "Rot",
     "pink": "Rosa",
     "gray": "Grau"
+  },
+  "ads": {
+    "section": "Werbung",
+    "removeAds": "Werbung entfernen",
+    "premiumActive": "Aktiv",
+    "privacyOptions": "Datenschutz-Einstellungen",
+    "rewardTitle": "12 Stunden ohne Werbung",
+    "rewardBody": "Ein kurzes Video ansehen",
+    "rewardLoading": "Video wird geladen…",
+    "remaining": "noch {{hours}} Std. {{minutes}} Min.",
+    "orWatch": "Oder kostenlos",
+    "watch": "Video ansehen",
+    "hintTitle": "Heute viele Bewerbungen?",
+    "hintBody": "Ein Video – und 12 Stunden keine Werbung."
+  },
+  "premium": {
+    "screenTitle": "Werbung entfernen",
+    "title": "Job Tracker ohne Werbung",
+    "body": "Alle Funktionen bleiben kostenlos. Der Kauf schaltet nur die Werbung ab – auch in künftigen Versionen.",
+    "oneTime": "Einmaliger Kauf",
+    "subscription": "Abo, jederzeit kündbar",
+    "buy": "Kaufen für {{price}}",
+    "unavailable": "Käufe sind in der Version aus Google Play und dem App Store verfügbar.",
+    "restore": "Käufe wiederherstellen",
+    "footer": "Die Zahlung läuft über dein Google-Play- oder App-Store-Konto.",
+    "failedTitle": "Kauf fehlgeschlagen",
+    "failedBody": "Es wurde nichts abgebucht. Bitte versuche es später noch einmal.",
+    "restoredTitle": "Kauf wiederhergestellt, Werbung ist aus",
+    "nothingToRestore": "Für dieses Konto wurden keine Käufe gefunden",
+    "activeTitle": "Keine Werbung mehr",
+    "activeBody": "Danke, dass du Job Tracker unterstützt!"
+  },
+  "about": {
+    "title": "Über die App",
+    "by": "von {{studio}}",
+    "support": "Support",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "imprint": "Impressum"
+  },
+  "data": {
+    "section": "Daten",
+    "export": "Als CSV exportieren",
+    "import": "Aus CSV importieren",
+    "footer": "CSV lässt sich in Excel und Google Sheets öffnen. Beim Import werden vorhandene Bewerbungen übersprungen.",
+    "nothingToExport": "Noch keine Bewerbungen zum Exportieren",
+    "exportFailed": "Die Datei konnte nicht erstellt werden",
+    "importDone_one": "{{count}} Bewerbung importiert",
+    "importDone_other": "{{count}} Bewerbungen importiert",
+    "importDetails": "Schon vorhanden: {{skipped}}. Zeilen mit Fehlern: {{invalid}}.",
+    "importFailed": "Import fehlgeschlagen",
+    "errors": {
+      "format": "Das ist keine Job-Tracker-CSV: Die Datei braucht die Spalten „title“ und „company“.",
+      "tooLarge": "Die Datei ist zu groß (max. 5 MB, 10.000 Zeilen).",
+      "empty": "Die Datei ist leer."
+    },
+    "importDone_few": "{{count}} Bewerbungen importiert",
+    "importDone_many": "{{count}} Bewerbungen importiert"
   }
 }

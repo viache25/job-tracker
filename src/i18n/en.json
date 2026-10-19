@@ -17,7 +17,8 @@
     "select": "Select",
     "clear": "Clear",
     "reset": "Reset",
-    "back": "Back"
+    "back": "Back",
+    "later": "Later"
   },
   "tabs": {
     "applications": "Applications",
@@ -164,7 +165,7 @@
     "tracker": "Tracker",
     "about": "About",
     "version": "Version",
-    "privacyNote": "All data stays on this device. No account, no server, no analytics."
+    "privacyNote": "Your applications stay on this device, no account needed. Ads and crash reports use technical data only, as described in the privacy policy."
   },
   "filters": {
     "title": "Filters",
@@ -324,5 +325,63 @@
     "red": "Red",
     "pink": "Pink",
     "gray": "Gray"
+  },
+  "ads": {
+    "section": "Ads",
+    "removeAds": "Remove ads",
+    "premiumActive": "Active",
+    "privacyOptions": "Privacy settings",
+    "rewardTitle": "12 hours without ads",
+    "rewardBody": "Watch one short video",
+    "rewardLoading": "Video is loading…",
+    "remaining": "{{hours}} h {{minutes}} min left",
+    "orWatch": "Or for free",
+    "watch": "Watch video",
+    "hintTitle": "Adding a lot today?",
+    "hintBody": "One video and there are no ads for 12 hours."
+  },
+  "premium": {
+    "screenTitle": "Remove ads",
+    "title": "Job Tracker without ads",
+    "body": "Every feature stays free. A purchase only switches ads off, on this and future versions.",
+    "oneTime": "One-time purchase",
+    "subscription": "Subscription, cancel anytime",
+    "buy": "Buy for {{price}}",
+    "unavailable": "Purchases are available in the version from Google Play and the App Store.",
+    "restore": "Restore purchases",
+    "footer": "Payment goes through your Google Play or App Store account.",
+    "failedTitle": "Purchase failed",
+    "failedBody": "Nothing was charged. Please try again later.",
+    "restoredTitle": "Purchase restored, ads are off",
+    "nothingToRestore": "No purchases found for this account",
+    "activeTitle": "No more ads",
+    "activeBody": "Thank you for supporting Job Tracker!"
+  },
+  "about": {
+    "title": "About",
+    "by": "by {{studio}}",
+    "support": "Support",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "imprint": "Imprint"
+  },
+  "data": {
+    "section": "Data",
+    "export": "Export to CSV",
+    "import": "Import from CSV",
+    "footer": "CSV opens in Excel and Google Sheets. Import skips applications you already have.",
+    "nothingToExport": "No applications to export yet",
+    "exportFailed": "Could not create the file",
+    "importDone_one": "Imported {{count}} application",
+    "importDone_other": "Imported {{count}} applications",
+    "importDetails": "Already in the app: {{skipped}}. Rows with errors: {{invalid}}.",
+    "importFailed": "Import failed",
+    "errors": {
+      "format": "This is not a Job Tracker CSV: the file needs \"title\" and \"company\" columns.",
+      "tooLarge": "The file is too large (max. 5 MB, 10,000 rows).",
+      "empty": "The file is empty."
+    },
+    "importDone_few": "Imported {{count}} applications",
+    "importDone_many": "Imported {{count}} applications"
   }
 }
