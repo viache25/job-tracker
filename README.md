@@ -47,7 +47,7 @@ eas submit -p ios                            # отправка в App Store Con
 Перед релизом:
 
 1. App ID AdMob (`app.json`) и ID рекламных блоков (`src/features/monetization/config.ts`) уже боевые. В dev-сборках реклама всегда тестовая; на свою настоящую рекламу не нажимать.
-2. В EAS → Environment variables задать `EXPO_PUBLIC_REVENUECAT_IOS_KEY`, `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY` (образец — `.env.example`); DSN Sentry уже в коде. Для source maps в Sentry — секрет `SENTRY_AUTH_TOKEN` и убрать `SENTRY_DISABLE_AUTO_UPLOAD` из `eas.json`.
+2. Публичный ключ RevenueCat для Android и DSN Sentry уже в коде; ключ iOS (`appl_…`) добавить в `src/features/monetization/config.ts`, когда появится приложение в App Store Connect. Сборки `preview` и `development` всегда показывают тестовую рекламу (`EXPO_PUBLIC_TEST_ADS=1`). Для source maps в Sentry — секрет `SENTRY_AUTH_TOKEN` и убрать `SENTRY_DISABLE_AUTO_UPLOAD` из `eas.json`.
 
 Как устроены реклама и покупка — [`docs/decisions/0004-monetization-ads.md`](docs/decisions/0004-monetization-ads.md).
 

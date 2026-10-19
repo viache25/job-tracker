@@ -33,19 +33,27 @@ const TEST_AD_UNITS: Record<'ios' | 'android', Record<AdPlacement, string>> = {
   },
 };
 
-export function adUnitId(placement: AdPlacement, { dev = __DEV__ } = {}): string {
+/** Preview builds for testers set this so they never see (or tap) real ads. */
+const FORCE_TEST_ADS = process.env.EXPO_PUBLIC_TEST_ADS === '1';
+
+export function adUnitId(placement: AdPlacement, { dev = __DEV__ || FORCE_TEST_ADS } = {}): string {
   const os = Platform.OS === 'ios' ? 'ios' : 'android';
   const production = PRODUCTION_AD_UNITS[os][placement];
   return !dev && production ? production : TEST_AD_UNITS[os][placement];
 }
 
-/** RevenueCat public SDK keys (safe to ship). Set in EAS env or `.env`. */
+/** RevenueCat public SDK keys (safe to ship); EAS env values override them. */
+const REVENUECAT_KEYS = {
+  android: 'goog_KfRizwtKxOCCEvlaxAIOMTgnSAP',
+  ios: null,
+} as const;
+
 export function revenueCatKey(): string | null {
-  const key =
+  const fromEnv =
     Platform.OS === 'ios'
       ? process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY
       : process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY;
-  return key ? key : null;
+  return fromEnv || (Platform.OS === 'ios' ? REVENUECAT_KEYS.ios : REVENUECAT_KEYS.android);
 }
 
 /** The single RevenueCat entitlement that removes ads. */
