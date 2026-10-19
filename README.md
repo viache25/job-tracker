@@ -1,4 +1,4 @@
-# JobTracker
+# Job Tracker
 
 [![CI](https://github.com/viache25/job-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/viache25/job-tracker/actions/workflows/ci.yml)
 
@@ -27,13 +27,30 @@ npx expo start
 
 Отсканируй QR-код камерой iPhone — приложение откроется в Expo Go. `i` в терминале открывает симулятор iPhone, `a` — эмулятор Android.
 
-Когда появятся нативные модули («Поделиться», покупки), понадобится development build:
+В Expo Go работает всё, кроме рекламы и покупок: их нативного кода там нет, и приложение просто показывается без рекламы.
+
+## Сборки в облаке (EAS)
+
+Xcode не нужен: EAS собирает в облаке Expo. Профили — в [`eas.json`](eas.json).
 
 ```bash
-npx expo run:ios --device     # через Xcode, бесплатная подпись (сборка живёт 7 дней)
-# или, с аккаунтом Apple Developer:
-npx eas build --profile development --platform ios
+npm install -g eas-cli
+eas login                      # аккаунт Expo @viache25
+eas init                       # один раз: создаёт проект в Expo и пишет его id в app.json
+eas build -p android --profile preview       # APK с тестовой рекламой — поставить на телефон
+eas build -p android --profile production    # AAB для Google Play
+eas build -p ios --profile production        # нужен Apple Developer; сертификаты EAS сделает сам
+eas submit -p android                        # отправка в стор (ключ сервисного аккаунта Google)
+eas submit -p ios                            # отправка в App Store Connect / TestFlight
 ```
+
+Перед релизом:
+
+1. В `app.json` заменить тестовые App ID AdMob (`androidAppId`, `iosAppId`) на свои.
+2. В `src/features/monetization/config.ts` вписать ID рекламных блоков (баннер, межстраничная, видео за награду). Пока они пустые, везде тестовая реклама Google; в dev-сборках она тестовая всегда.
+3. В EAS → Environment variables задать `EXPO_PUBLIC_REVENUECAT_IOS_KEY`, `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY`, `EXPO_PUBLIC_SENTRY_DSN` (образец — `.env.example`). Для source maps в Sentry — секрет `SENTRY_AUTH_TOKEN` и убрать `SENTRY_DISABLE_AUTO_UPLOAD` из `eas.json`.
+
+Как устроены реклама и покупка — [`docs/decisions/0004-monetization-ads.md`](docs/decisions/0004-monetization-ads.md).
 
 ## Web-превью
 
