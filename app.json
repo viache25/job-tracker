@@ -135,11 +135,6 @@
     },
     "extra": {
       "eas": {}
-    },
-    "locales": {
-      "en": "./src/i18n/native/en.json",
-      "de": "./src/i18n/native/de.json",
-      "ru": "./src/i18n/native/ru.json"
     }
   }
 }
