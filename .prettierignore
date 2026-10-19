@@ -1,0 +1,10 @@
+node_modules
+.expo
+dist
+drizzle
+backlog
+docs
+src/parser/__fixtures__
+*.md
+package-lock.json
+coverage

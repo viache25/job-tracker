@@ -1,4 +1,6 @@
-# JobTracker
+# Job Tracker
+
+[![CI](https://github.com/viache25/job-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/viache25/job-tracker/actions/workflows/ci.yml)
 
 Трекер откликов на вакансии для iOS и Android: делишься ссылкой — вакансия сама раскладывается по столбцам, этапы и напоминания ведут до оффера.
 
@@ -25,13 +27,33 @@ npx expo start
 
 Отсканируй QR-код камерой iPhone — приложение откроется в Expo Go. `i` в терминале открывает симулятор iPhone, `a` — эмулятор Android.
 
-Когда появятся нативные модули («Поделиться», покупки), понадобится development build:
+В Expo Go работает всё, кроме рекламы и покупок: их нативного кода там нет, и приложение просто показывается без рекламы.
+
+## Сборки в облаке (EAS)
+
+Xcode не нужен: EAS собирает в облаке Expo. Профили — в [`eas.json`](eas.json).
 
 ```bash
-npx expo run:ios --device     # через Xcode, бесплатная подпись (сборка живёт 7 дней)
-# или, с аккаунтом Apple Developer:
-npx eas build --profile development --platform ios
+npm install -g eas-cli
+eas login                      # аккаунт Expo @viache25
+eas init                       # один раз: создаёт проект в Expo и пишет его id в app.json
+eas build -p android --profile preview       # APK с тестовой рекламой — поставить на телефон
+eas build -p android --profile production    # AAB для Google Play
+eas build -p ios --profile production        # нужен Apple Developer; сертификаты EAS сделает сам
+eas submit -p android                        # отправка в стор (ключ сервисного аккаунта Google)
+eas submit -p ios                            # отправка в App Store Connect / TestFlight
 ```
+
+Перед релизом:
+
+1. App ID AdMob (`app.json`) и ID рекламных блоков (`src/features/monetization/config.ts`) уже боевые. В dev-сборках реклама всегда тестовая; на свою настоящую рекламу не нажимать.
+2. Публичный ключ RevenueCat для Android и DSN Sentry уже в коде; ключ iOS (`appl_…`) добавить в `src/features/monetization/config.ts`, когда появится приложение в App Store Connect. Сборки `preview` и `development` всегда показывают тестовую рекламу (`EXPO_PUBLIC_TEST_ADS=1`). Для source maps в Sentry — секрет `SENTRY_AUTH_TOKEN` и убрать `SENTRY_DISABLE_AUTO_UPLOAD` из `eas.json`.
+
+Как устроены реклама и покупка — [`docs/decisions/0004-monetization-ads.md`](docs/decisions/0004-monetization-ads.md).
+
+## Web-превью
+
+`npx expo start --web` подходит для быстрого взгляда на вёрстку (`/dev/ui`, настройки). Открывайте не корень, а, например, `http://localhost:8081/settings`: заголовки cross-origin isolation, нужные SQLite в браузере, ставятся на эти пути. Web-версия expo-sqlite нестабильна на синхронных запросах, поэтому экраны с данными проверяем на iPhone или в симуляторе. Разбор ссылок в браузере не работает из-за CORS — только на телефоне.
 
 ## Проверки
 
