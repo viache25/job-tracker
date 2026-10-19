@@ -1,6 +1,7 @@
-const { getDefaultConfig } = require('expo/metro-config');
+const { getSentryExpoConfig } = require('@sentry/react-native/metro');
 
-const config = getDefaultConfig(__dirname);
+// Sentry's wrapper adds debug IDs so crash stack traces map back to source.
+const config = getSentryExpoConfig(__dirname);
 
 // Drizzle migrations are bundled as .sql strings.
 config.resolver.sourceExts.push('sql');

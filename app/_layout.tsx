@@ -15,14 +15,16 @@ import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useDatabaseReady } from '@/db/useDatabaseReady';
+import { useStartMonetization } from '@/features/monetization/start';
 import { useResolvedLanguage, useThemePreference } from '@/features/settings/preferences';
 import i18n from '@/i18n';
 import { palette, space, ThemeProvider, typography, useTheme } from '@/ui';
+import { withCrashReports } from '@/lib/sentry';
 import { useStackScreenOptions } from '@/ui/navigation';
 
 void SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({
     Onest_400Regular,
     Onest_500Medium,
@@ -53,6 +55,8 @@ export default function RootLayout() {
   );
 }
 
+export default withCrashReports(RootLayout);
+
 /** Applies the saved theme and language. Rendered only once the database is ready. */
 function Preferences({ children }: { children: React.ReactNode }) {
   const [theme] = useThemePreference();
@@ -65,6 +69,7 @@ function RootStack() {
   const { t } = useTranslation();
   const { colors, scheme } = useTheme();
   const screenOptions = useStackScreenOptions();
+  useStartMonetization();
 
   useEffect(() => {
     void SystemUI.setBackgroundColorAsync(colors.background);
@@ -82,6 +87,8 @@ function RootStack() {
         <Stack.Screen name="application/form" options={{ title: t('form.newTitle') }} />
         <Stack.Screen name="add" options={{ presentation: 'modal', title: t('add.title') }} />
         <Stack.Screen name="stages" options={{ title: t('stagesEditor.title') }} />
+        <Stack.Screen name="premium" options={{ title: t('premium.screenTitle') }} />
+        <Stack.Screen name="about" options={{ title: t('about.title') }} />
         <Stack.Screen name="dev/ui" options={{ title: 'UI' }} />
       </Stack>
     </>
