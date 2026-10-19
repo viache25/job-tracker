@@ -67,9 +67,13 @@ export function createApplicationsRepo(db: Db, clock: () => string = nowIso) {
         .get();
     },
 
-    /** Creates an application and its first stage event in one transaction. */
-    create(input: ApplicationInput): Application {
+    /**
+     * Creates an application and its first stage event in one transaction.
+     * `createdAt` keeps the original date when importing.
+     */
+    create(input: ApplicationInput, { createdAt }: { createdAt?: string } = {}): Application {
       const now = clock();
+      const created = createdAt ?? now;
       const id = newId();
       const stageId = input.stageId ?? defaultStageId();
       const row: NewApplication = {
@@ -77,7 +81,7 @@ export function createApplicationsRepo(db: Db, clock: () => string = nowIso) {
         id,
         stageId,
         salaryMonthlyGross: monthlyGross(input),
-        createdAt: now,
+        createdAt: created,
         updatedAt: now,
       };
       db.transaction((tx) => {
@@ -88,7 +92,7 @@ export function createApplicationsRepo(db: Db, clock: () => string = nowIso) {
             applicationId: id,
             fromStageId: null,
             toStageId: stageId,
-            at: now,
+            at: created,
           })
           .run();
       });
